@@ -1,0 +1,724 @@
+/* prescription.css */
+.prescription-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(rgba(37, 40, 107, 0.8), rgba(37, 40, 107, 0.8)),
+    url('/images/campus.png') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Inter', sans-serif;
+}
+
+.prescription-form {
+  background-color: rgba(37, 40, 107, 0.9);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 64rem;
+  margin: 1rem 0;
+}
+
+/* Logo container styling */
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 6rem;
+  width: 6rem;
+  object-fit: contain;
+}
+
+.clinic-name {
+  color: white;
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.prescription-label {
+  color: rgba(235, 225, 225, 0.8);
+  margin: 5px 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.dashboard-back {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3C8DFF 0%, #4F96FF 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  /* This pushes the button to the right */
+  display: block;
+  /* Makes margin-left: auto work properly */
+  box-shadow: 0 4px 15px rgba(60, 141, 255, 0.3);
+}
+
+.dashboard-back:hover {
+  background: linear-gradient(135deg, #2563EB 0%, #3C8DFF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(60, 141, 255, 0.4);
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #1061d3;
+  box-shadow: 0 0 0 3px rgba(60, 141, 255, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Table Container - Updated */
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid rgba(30, 58, 138, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  background-color: rgba(30, 58, 138, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header Fixed Styling - Updated with darker blue shades */
+.table-header-fixed {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-header-fixed table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header-fixed th {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  vertical-align: middle;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+/* Individual column widths for better alignment */
+.table-header-fixed th:nth-child(1) {
+  /* S.No. */
+  width: 5%;
+  min-width: 50px;
+}
+
+.table-header-fixed th:nth-child(2) {
+  /* Type */
+  width: 10%;
+  min-width: 80px;
+}
+
+.table-header-fixed th:nth-child(3) {
+  /* Medicine Name */
+  width: 25%;
+  min-width: 150px;
+}
+
+.table-header-fixed th:nth-child(4) {
+  /* Dosage */
+  width: 20%;
+  min-width: 120px;
+}
+
+.table-header-fixed th:nth-child(5) {
+  /* Food Intake */
+  width: 10%;
+  min-width: 80px;
+}
+
+.table-header-fixed th:nth-child(6) {
+  /* Duration */
+  width: 15%;
+  min-width: 100px;
+}
+
+.table-header-fixed th:nth-child(7) {
+  /* As Needed */
+  width: 10%;
+  min-width: 80px;
+}
+
+.table-header-fixed th:nth-child(8) {
+  /* Remove */
+  width: 5%;
+  min-width: 60px;
+}
+
+/* Header hover effect */
+.table-header-fixed th:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* Scrollable body wrapper improvements */
+.scrollable-body-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.scrollable-body-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Body row styling to match header */
+.scrollable-body-wrapper td {
+  padding: 0.75rem 0.5rem;
+  border: 1px solid rgba(30, 58, 138, 0.1);
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+/* Alternating row colors */
+.scrollable-body-wrapper tbody tr:nth-child(even) {
+  background-color: rgba(30, 58, 138, 0.05);
+}
+
+.scrollable-body-wrapper tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.scrollable-body-wrapper tbody tr:hover {
+  background-color: rgba(30, 58, 138, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+/* Empty state styling */
+.no-medicines-row td,
+.no-medicines td {
+  text-align: center;
+  padding: 1.5rem;
+  color: rgba(30, 58, 138, 0.7);
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Medicine row inputs styling */
+.medicine-type,
+.medicine-name,
+.dosage-input,
+.food-intake-select,
+.duration-input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.medicine-name {
+  text-align: left;
+}
+
+.serial-no-cell {
+  text-align: center;
+  font-weight: 600;
+}
+
+.dosage-cell {
+  text-align: center;
+}
+
+.dosage-column-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.dosage-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.dosage-group label {
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.dosage-input {
+  padding: 0.25rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.food-intake-select {
+  text-align: center;
+}
+
+.duration-input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.duration-input {
+  width: 3.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.duration-input-group span {
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.as-needed-cell {
+  text-align: center;
+}
+
+.as-needed-checkbox {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.remove-cell {
+  text-align: center;
+}
+
+.remove-btn {
+  cursor: pointer;
+  color: #ff4757;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1;
+  padding: 0 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  color: #ff6b81;
+  transform: scale(1.2);
+}
+
+.add-medicine-btn {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #3C8DFF 0%, #4F96FF 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.add-medicine-btn:hover {
+  background: linear-gradient(135deg, #2563EB 0%, #3C8DFF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.submit-btn,
+.print-btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #3C8DFF 0%, #4F96FF 100%);
+  color: white;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #2563EB 0%, #3C8DFF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.print-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #3C8DFF;
+}
+
+.print-btn:hover {
+  background: linear-gradient(135deg, #f9f9f9 0%, #e6e6e6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98));
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  min-width: 300px;
+  max-width: 90vw;
+  border: 2px solid rgba(37, 40, 107, 0.2);
+  color: #25286b;
+}
+
+.modal p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-confirm-btn,
+.modal-cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.modal-confirm-btn {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  color: white;
+}
+
+.modal-confirm-btn:hover {
+  background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+  transform: translateY(-2px);
+}
+
+.modal-cancel-btn {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  color: #4b5563;
+}
+
+.modal-cancel-btn:hover {
+  background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+  transform: translateY(-2px);
+}
+
+/* Scrollbar styling */
+.table-container::-webkit-scrollbar,
+.scrollable-body-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track,
+.scrollable-body-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb,
+.scrollable-body-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(30, 58, 138, 0.4);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover,
+.scrollable-body-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 58, 138, 0.6);
+}
+
+/* Disabled state for inputs */
+.medicine-type:disabled,
+.medicine-name:disabled,
+.dosage-input:disabled,
+.food-intake-select:disabled,
+.duration-input:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Disabled button state */
+.submit-btn.disabled {
+  background: #ccc !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+  animation: pulse 1.5s infinite;
+}
+
+.submit-btn.disabled:hover {
+  background: #ccc !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Medicine row specific styles */
+.medicine-row td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* Text center utility */
+.text-center {
+  text-align: center;
+}
+
+/* Error image fallback styling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Loading state animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prescription-form {
+    padding: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .table-header-fixed th {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.3rem;
+    letter-spacing: 0.25px;
+  }
+
+  .scrollable-body-wrapper {
+    min-width: 700px;
+  }
+
+  .dosage-column-container {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .dosage-group {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submit-btn,
+  .print-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prescription-container {
+    padding: 0.5rem;
+  }
+
+  .prescription-form {
+    padding: 1rem;
+  }
+
+  .clinic-name {
+    font-size: 1.5rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-confirm-btn,
+  .modal-cancel-btn {
+    width: 100%;
+  }
+
+  .table-header-fixed th {
+    font-size: 0.7rem;
+    padding: 0.6rem 0.2rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .prescription-container {
+    background: none !important;
+    padding: 0 !important;
+  }
+
+  .prescription-form {
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+  }
+
+  .form-actions,
+  .add-medicine-btn,
+  .remove-btn {
+    display: none !important;
+  }
+
+  .form-input,
+  .form-textarea,
+  .medicine-type,
+  .medicine-name,
+  .dosage-input,
+  .food-intake-select,
+  .duration-input {
+    background: transparent !important;
+    border: none !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .table-header-fixed th {
+    background: #1e3a8a !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}

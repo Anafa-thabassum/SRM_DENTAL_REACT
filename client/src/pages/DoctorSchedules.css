@@ -1,0 +1,437 @@
+/* Container background */
+.doctor-schedule-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+              url('/images/campus.png') center/cover no-repeat;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+}
+.doctor-schedule-page ::before {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+              url('/images/campus.png') center/cover no-repeat;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+}
+
+.doctor-schedule {
+  background: linear-gradient(to right, #e6f0ff, #cce0ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  width: 100%;
+}
+
+.schedule-container {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.schedule-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.schedule-header h1 {
+  color: #1a56db;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.section-title {
+  color: #1a56db;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Appointment card */
+.appointment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #1a56db;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Appointment status tabs */
+.status-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.status-tabs button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.status-tabs button.tab-active {
+  background: #1a56db;
+  font-weight: bold;
+}
+
+.status-tabs button:hover {
+  background: #2563eb;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-confirmed-by-me {
+  background: #059669;
+  color: white;
+  border: 1px solid #10b981;
+}
+
+.status-confirmed {
+  background: #16a34a;
+  color: white;
+}
+
+.status-pending {
+  background: #f59e0b;
+  color: white;
+}
+
+.status-cancelled {
+  background: #dc2626;
+  color: white;
+}
+
+.status-rescheduled {
+  background: #7c3aed;
+  color: white;
+}
+
+.status-default {
+  background: #6b7280;
+  color: white;
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.booking-id {
+  font-size: 0.875rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.appointment-card p {
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.appointment-card strong {
+  color: #1f2937;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-confirm {
+  background: #16a34a;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-confirm:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.btn-decline {
+  background: #dc2626;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-decline:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background: #6b7280;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background: #4b5563;
+  transform: translateY(-2px);
+}
+
+.btn-reschedule {
+  background: #3b82f6;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reschedule:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.reschedule-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.reschedule-modal h3 {
+  color: #1a56db;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.reschedule-modal p {
+  margin-bottom: 0.75rem;
+  color: #374151;
+}
+
+.modal-text {
+  font-weight: 500;
+  margin-top: 1.5rem;
+  color: #1f2937 !important;
+}
+
+/* Date & Time slots */
+.date-grid,
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.date-slot,
+.time-slot {
+  background: #3b82f6;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-weight: 500;
+}
+
+.date-slot:hover,
+.time-slot:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.time-slot.selected {
+  background: #1a56db;
+  border: 2px solid #93c5fd;
+  transform: scale(1.05);
+}
+
+.time-slot.booked {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+/* Message box */
+.message-box {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 1000;
+  animation: slideDown 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.message-box.success {
+  background: #16a34a;
+  color: white;
+  border: 1px solid #10b981;
+}
+
+.message-box.error {
+  background: #dc2626;
+  color: white;
+  border: 1px solid #f87171;
+}
+
+/* No appointments message */
+.no-appointments {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+/* Logo styling */
+.logo {
+  max-height: 80px;
+  border-radius: 15px;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .doctor-schedule-page,
+  .doctor-schedule {
+    padding: 1rem;
+  }
+  
+  .schedule-container {
+    padding: 1.5rem;
+  }
+  
+  .status-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .appointment-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .date-grid,
+  .time-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .reschedule-modal {
+    padding: 1.5rem;
+  }
+}

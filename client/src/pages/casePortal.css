@@ -1,0 +1,148 @@
+.case-portal-container {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(rgba(37, 40, 107, 0.5), rgba(37, 40, 107, 0.5)), 
+                url('/images/campus.png') center/cover no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.container-portal {
+    margin-top: 20%;
+    background: rgba(37, 40, 106, 0.9);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/* Complaint section styles */
+.complaint-section {
+    margin-bottom: 2rem;
+}
+
+.complaint-label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem; /* smaller */
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.complaint-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* smaller width */
+    gap: 0.8rem;
+}
+
+.complaint-option {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.6rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem; /* smaller */
+    font-weight: 600; /* bold */
+}
+
+.complaint-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Button styles */
+.button-group-portal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* force 2 per row */
+    gap: 10px;
+}
+
+.button-portal {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.8rem; /* slightly smaller */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem; /* smaller */
+    font-weight: 600; /* bold */
+    text-align: center;
+    box-shadow: none; /* no shadow */
+}
+
+.button-portal:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Sub-options styling */
+.sub-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Back button */
+.back-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .button-group, .sub-options {
+        grid-template-columns: repeat(2, 1fr); /* still keep 2 per row */
+    }
+    .heading {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-portal-container {
+        padding: 10px;
+    }
+    .container {
+        padding: 1.5rem;
+    }
+    .button-group, .sub-options {
+        grid-template-columns: 1fr; /* single column on small screens */
+    }
+}
